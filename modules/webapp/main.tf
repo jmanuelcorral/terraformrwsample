@@ -10,7 +10,8 @@ resource "azurerm_app_service" "backend" {
   }
 
   app_settings = {
-    "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = "false"
-    "DOCKER_REGISTRY_SERVER_URL"          = "https://index.docker.io"
+    "WEBSITES_ENABLE_APP_SERVICE_STORAGE"         = "false"
+    "DOCKER_REGISTRY_SERVER_URL"                  = "https://index.docker.io"
+    "ConnectionStrings__DefaultConnectionString"  = "${var.app_connectionstring}" 
   }
 }
